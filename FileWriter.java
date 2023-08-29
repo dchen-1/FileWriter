@@ -6,12 +6,12 @@ import java.io.PrintWriter;
 public class FileWriter {
     public static String read(String filename) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader(filename));
-        String str = "";
+        StringBuilder str = new StringBuilder (""); //sophia changed this from a string to a stringBuilder
         while(br.ready()){
-            str+= (char) br.read(); //hey og person, sophia also typecasted this into char for you
+            str.append ((char)(br.read())); //hey og person, sophia also typecasted this into char for you
         }
         br.close();
-        return str;
+        return str.toString();
     }
 
     
